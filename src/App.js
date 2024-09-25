@@ -1,25 +1,16 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
 
-function App() {
+function Counter() {
+  // Declare a state variable "count" with an initial value of 0
+  const [count, setCount] = useState(0);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <h1>Counter: {count}</h1>
+      {/* Update the state using setCount when the button is clicked */}
+      <button onClick={() => setCount(count + 1)}>Increment</button>
     </div>
   );
 }
 
-export default App;
+export default Counter;
